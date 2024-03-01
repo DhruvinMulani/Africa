@@ -18,13 +18,22 @@ struct ContentView: View {
                 CoverImageView()
                     .frame(height: 300)
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+
                 
-                ForEach(animal) {
-                    animal in AnimalListItemview(animal: animal)
-                }
-            }
+                ForEach(animal) { animal in
+                    NavigationLink(destination: AnimalDetailView(animal: animal)){
+                        
+                        AnimalListItemview(animal: animal)
+                    }//Link
+                }//Loop
+                
+            }//LIST
+            .listStyle(PlainListStyle()) 
+            .scrollIndicators(ScrollIndicatorVisibility.hidden)
             .navigationBarTitle("Africa", displayMode: .large)
+            
         }//NavigationView
+        
        
     }
 }
