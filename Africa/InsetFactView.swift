@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct insetFactView: View {
+struct InsetFactView: View {
     let animal: Animal
     var body: some View {
         GroupBox {
@@ -29,7 +29,7 @@ struct insetFactView_perview: PreviewProvider{
     
     static var previews: some View{
         NavigationView{
-            insetFactView(animal : animals[0])
+            InsetFactView(animal : animals[0])
         }
         .previewDevice("iphone 15 pro")
     }

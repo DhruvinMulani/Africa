@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct insetGallaryView: View {
+struct InsetGallaryView: View {
     
     let animal :Animal
     
@@ -33,6 +33,6 @@ struct InsetView_perview: PreviewProvider{
     static let animals: [Animal] = Bundle.main.decode("animals.json")
     
     static var previews: some View{
-            insetGallaryView(animal : animals[0])
+            InsetGallaryView(animal : animals[0])
     }
 }

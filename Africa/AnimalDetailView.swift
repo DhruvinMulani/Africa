@@ -16,7 +16,7 @@ struct AnimalDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 20){
-
+                
                 // Hero Image
                 Image(animal.image)
                     .resizable()
@@ -44,8 +44,8 @@ struct AnimalDetailView: View {
                 
                 Group{
                     HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures")
-                    insetGallaryView(animal: animal)
-
+                    InsetGallaryView(animal: animal)
+                    
                 }.padding(.horizontal)
                 
                 //facts
@@ -54,34 +54,48 @@ struct AnimalDetailView: View {
                     HeadingView(headingImage: "questionmark.circle", headingText: "Did you know?")
                 }.padding(.horizontal)
                 
-                insetFactView(animal:animal)
+                InsetFactView(animal:animal)
                 
                 //description
                 Group{
                     HeadingView(headingImage: "info.circle", headingText: "All about \(animal.name)")
+                    Text(animal.description)
+                        .multilineTextAlignment(.leading)
+                        .layoutPriority(1)
                 }.padding(.horizontal)
                 //map
+                Group{
+                    HeadingView(headingImage: "map", headingText: "National Park")
+                    InsetMapView()
+                    
+                }.padding(.horizontal)
                 
                 //link
-              
-
-            }//vstack
-            .navigationBarTitle("Learn about \(animal.name)",
-                                displayMode: .inline)
-        }//scrollview
-    }
-}
-
-
-struct AnimalDetailView_perview: PreviewProvider{
-    
-    
-    static let animals: [Animal] = Bundle.main.decode("animals.json")
-    
-    static var previews: some View{
-        NavigationView{
-            AnimalDetailView(animal : animals[0])
+                Group{
+                    HeadingView(headingImage: "books.vertical", headingText: "Learn More")
+                    
+                    ExternalWeblinkView(animal: animal)
+                    
+                }.padding(.horizontal)
+                
+                
+                    .navigationBarTitle("Learn about \(animal.name)",
+                                        displayMode: .inline)
+            }//scrollview
         }
-        .previewDevice("iphone 15 pro")
+    }
+    
+    
+    struct AnimalDetailView_perview: PreviewProvider{
+        
+        
+        static let animals: [Animal] = Bundle.main.decode("animals.json")
+        
+        static var previews: some View{
+            NavigationView{
+                AnimalDetailView(animal : animals[0])
+            }
+            .previewDevice("iphone 15 pro")
+        }
     }
 }
