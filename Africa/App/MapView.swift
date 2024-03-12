@@ -19,7 +19,7 @@ struct MapView: View {
         return mapRegion
     }()
     
-    let locations : [NationalParkLocation] = Bundle.main.decode("dhruvin.json")
+    let locations : [NationalParkLocation] = Bundle.main.decode("locations.json")
     var body: some View {
         // basic map
         Map(coordinateRegion: $region, annotationItems: locations, annotationContent:{ item in
@@ -28,15 +28,66 @@ struct MapView: View {
             
             // MapMarker(coordinate: item.location,tint: .accentColor)
             
-            MapAnnotation(coordinate: item.location) {
-                Image("logo")
+//            MapAnnotation(coordinate: item.location) {
+//                Image("logo")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 32,height: 32,alignment: .center)
+//            }
+            
+            // constum advance annotaion
+            
+            MapAnnotation(coordinate: item.location){
+                mapAnnotationView(location: item)
+            }
+        })
+        .overlay(
+            HStack(alignment: .center, spacing: 12){
+                Image("compass")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 32,height: 32,alignment: .center)
+                    .frame(width: 48, height: 48, alignment: .center)
+                
+                
+                VStack(alignment: .leading, spacing: 3){
+                    HStack{
+                        Text("Lattitude:")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.accent)
+                        Spacer()
+                        
+                        Text("\(region.center.latitude)")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                    }
+                    Divider()
+                    
+                    HStack {
+                        Text("longitude:")
+                            .font(.footnote)
+                            .fontWeight(.bold)
+                            .foregroundColor(.accent)
+                        
+                        Spacer()
+                        
+                        Text("\(region.center.longitude)")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                        
+                    }
+                }
             }
-            
-            
-        })
+                
+                .padding(.vertical,12)
+            .padding(.horizontal,16)
+                .background(Color.black
+                    .cornerRadius(8)
+                    .opacity(0.6))
+                .padding()
+            ,
+            alignment: .top
+            )
     }
 }
 
