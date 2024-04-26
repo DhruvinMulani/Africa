@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var toolbarIcon : String = "square.grid.2x2"
     
     
-    //function
+    //functions
     
     func gridSwitch(){
         gridLayout = Array(repeating: .init(.flexible()), count: gridLayout.count % 3 + 1)
