@@ -10,7 +10,7 @@ Explore Africa's wildlife like never before with AFRICA: your ultimate animal gu
     <tr>
       <td width="1%"><img src="https://github.com/DhruvinMulani/Africa/assets/84307576/54faacd5-7beb-4552-889a-aea098cfab93"/></td>
       <td width="1%"><img src="https://github.com/DhruvinMulani/Africa/assets/84307576/3b554f8e-8062-4f97-8348-8b0d36a67df3"/></td>
-       <td width="1%"><img src="[https://github.com/DhruvinMulani/Africa/assets/84307576/dec17402-0df6-448a-b85a-bf2648eca79a](https://github.com/DhruvinMulani/Africa/assets/84307576/5736b47a-1107-4dc0-9027-a98188c2c2e0)"/></td>
+       <td width="1%"><img src="https://github.com/DhruvinMulani/Africa/assets/84307576/5736b47a-1107-4dc0-9027-a98188c2c2e0"/></td>
     </tr>
     <tr>
       <td width="1%"><img src="https://github.com/DhruvinMulani/Africa/assets/84307576/d19fe483-b99c-40c1-a488-fe21763f6684)"/></td>
