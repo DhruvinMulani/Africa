@@ -1,8 +1,9 @@
-## Screenshots
-# Project Title
+
+## Project Title
 
 Explore Africa's wildlife like never before with AFRICA: your ultimate animal guide. Delve into detailed profiles using JSON with Swift, master Grid Layouts and MapKit integration, and enhance your coding skills with Swift concepts like Extensions and Generics. Built with SwiftUI for prototyping and featuring a video player and iMessage stickers – download now and discover Africa's wonders!
 
+## Screenshots
 
 <table width="100%">
   <tbody>
